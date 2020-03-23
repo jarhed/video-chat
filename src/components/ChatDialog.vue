@@ -17,7 +17,6 @@
           <md-button
             class="md-icon-button chat-dialog__video"
             @click="video(true)"
-            :disabled="showDialog.msg.length === 0"
             v-if="!this.videoCall">
             <md-icon>video_call</md-icon>
           </md-button>
