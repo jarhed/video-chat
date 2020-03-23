@@ -18,7 +18,7 @@ services:
     build: 
       context: .
       args:
-        VUE_APP_SOCKET_HOST: localhost
+        VUE_APP_SOCKET_HOST: craftytv.perses.io
         VUE_APP_SOCKET_PORT: 443 
     ports: 
       - 3000:3000
@@ -36,7 +36,7 @@ services:
     build: 
       context: .
       args:
-        VUE_APP_SOCKET_HOST: localhost
+        VUE_APP_SOCKET_HOST: craftytv.perses.io
         VUE_APP_SOCKET_PORT: 3001 
     ports: 
       - 3001:3001
