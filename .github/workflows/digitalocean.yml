@@ -21,18 +21,14 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Install ssh keys  
-      uses: shimataro/ssh-key-action@v2
+      uses: appleboy/ssh-action@master
       with:
+        host: ${{ secrets.craftytv_host }}
         key: ${{ secrets.craftytv }}
-        name: id_rsa
-        known_hosts: ${{ secrets.craftytv_known_hosts }}
-    # Runs a set of commands using the runners shell
-    - name: Pull, build and raise
-      run: |
-        ssh www@craftytv.perses.io,
-        cd ~/video-chat,
-        docker-compose -f docker-compose.yml down,
-        git pull,
-        docker-compose -f docker-compose.yml build,
-        docker-compose -f docker-compose.yml up
-        
+        username: ${{ secrets.craftytv_username }}
+        script: |
+          cd ~/video-chat,
+          docker-compose -f docker-compose.yml down,
+          git pull,
+          docker-compose -f docker-compose.yml build,
+          docker-compose -f docker-compose.yml up
