@@ -1,6 +1,6 @@
 <template>
   <div class="options">
-    <h2>VIDEO CHAT</h2>
+    <h2>Crafty TV</h2>
     <div>
       <form novalidate class="md-layout" @submit.prevent="submitForm">
         <md-field>
