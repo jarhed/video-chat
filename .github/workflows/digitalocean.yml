@@ -27,8 +27,8 @@ jobs:
         key: ${{ secrets.craftytv }}
         username: ${{ secrets.craftytv_username }}
         script: |
-          cd ~/video-chat,
-          docker-compose -f docker-compose.yml down,
-          git pull,
-          docker-compose -f docker-compose.yml build,
+          cd ~/video-chat
+          docker-compose -f docker-compose.yml down
+          git pull
+          docker-compose -f docker-compose.yml build
           docker-compose -f docker-compose.yml up
