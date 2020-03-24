@@ -24,8 +24,9 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.craftytv_host }}
-        key: ${{ secrets.craftytv }}
+        key: ${{ secrets.craftytv_key }}
         username: ${{ secrets.craftytv_username }}
+        port: 22
         script: |
           cd ~/video-chat
           docker-compose -f docker-compose.yml down
